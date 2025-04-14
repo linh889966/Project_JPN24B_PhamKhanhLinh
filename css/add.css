@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.content-left {
+  width: 240px;
+  min-height: 100vh;
+  background-color: #F6F8F9;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #4094F7;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  gap: 10px;
+}
+
+.left-chose {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.left-chose div {
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.left-chose a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.left-chose div:hover,
+.category.active {
+  background-color: #D7EDFF;
+}
+
+.content-right {
+  flex: 1;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.admin {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin img {
+  border-radius: 50%;
+  border: 2px solid #4094F7;
+  width: 30px;
+  height: 30px;
+}
+
+.category-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.letf-add {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.category-add {
+  background-color: #4094F7;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category-add:hover {
+  background-color: #3078d6;
+}
+
+.chosse {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.chosse select,
+.seach input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.seach {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 10px;
+  height: 35px;
+}
+
+.category-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  max-width: 90%;
+  display: none;
+  z-index: 999;
+}
+
+.category-form.show {
+  display: block;
+}
+
+.modal-body input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.category-form button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.category-form button[type="submit"] {
+  background-color: #4094F7;
+  color: white;
+}
+
+.category-form button[type="button"] {
+  background-color: #e0e0e0;
+}
+
+.category-code table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.category-code th,
+.category-code td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.category-code th {
+  background-color: #4094F7;
+  color: white;
+}
+
+.badge-active {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.badge-inactive {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.frame button {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.frame button.active,
+.frame button:hover {
+  background-color: #4094F7;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.delete-icon,
+.edit-icon {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Màu và viền theo ảnh */
+.delete-icon {
+  color: #FF3B30;
+  /* đỏ viền */
+}
+
+.edit-icon {
+  color: #FFA500;
+  /* cam */
+}
+
+.content {
+  width: 1100px;
+  height: 600px;
+}
+
+
+
+
+
+
+/* === MODAL XOÁ DANH MỤC TÙY CHỈNH === */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-body p {
+  font-size: 16px;
+  margin: 15px 0;
+  color: #333;
+}
+
+.modal-footer {
+  border-top: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 0;
+}
+
+/* Nút Hủy */
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+}
+
+/* Nút Xoá */
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+}
+
+.modal-footer .btn:hover {
+  opacity: 0.9;
+}
+
+/*thông báo */
+

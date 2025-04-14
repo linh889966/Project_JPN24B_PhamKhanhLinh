@@ -1,0 +1,290 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background: #fff;
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 1px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #333;
+    transition: background 0.2s ease;
+  }
+  
+  .sidebar li:hover,
+  .sidebar li.active {
+    background-color: #f0f0f0;
+    font-weight: 600;
+    color: #007bff;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .header button:hover {
+    background-color: #0b5ed7;
+  }
+  
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+  
+  .filters select,
+  .filters input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    width: 200px;
+  }
+  
+  .filters input[type="text"] {
+    flex: 1;
+    max-width: 250px;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .product-table th,
+  .product-table td {
+    border-bottom: 1px solid #dee2e6;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .product-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+  }
+  
+  /* === Modal nền === */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+/* === Khung form === */
+.modal-content {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 800px;
+  padding: 24px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* === Tiêu đề === */
+.modal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* === Form layout 2 cột === */
+#product-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+/* === Label & Input === */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group label.required::after {
+  content: " *";
+  color: red;
+}
+
+/* === Input, Select, Textarea === */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* === Radio Group === */
+.form-group .radio-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.radio-group label {
+  font-weight: normal;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* === Dòng chi tiết chiếm full chiều ngang === */
+#product-detail {
+  grid-column: span 2;
+}
+
+/* === Hành động nút === */
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+#cancel-btn {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#submit-btn {
+  background-color: #0d6efd;
+  color: white;
+  padding: 8px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.product-table button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.product-table button img {
+  width: 24px;
+  height: 24px;
+}
+
+.product-table button:focus {
+  outline: none;
+}
+
+.product-table button:hover {
+  transform: scale(1.1);
+}
+
+
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
