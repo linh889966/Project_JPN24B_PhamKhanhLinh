@@ -163,7 +163,7 @@ form.addEventListener('submit', (e) => {
     // Thêm sản phẩm 
     newProduct['index']=productList.length+1
 
-    showCartNotification('success','Thêm sản xuất thành công')
+    showCartNotification('success','Thêm sản phẩm thành công')
 
     productList.push(newProduct);
     currentPage = 1;
@@ -273,6 +273,7 @@ let editingIndex = null; // chỉ số sản phẩm đang chỉnh sửa
 
 
 function editProduct(index) {
+  modal.classList.add('hidden');
   const product = productList[index];
   editingIndex = index;
 

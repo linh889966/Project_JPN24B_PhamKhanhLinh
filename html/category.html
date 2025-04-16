@@ -17,6 +17,7 @@
 
 <body>
   <div class="container">
+    <div id="notifications-container" class="notifications-container"></div>
     <div class="content-left">
       <div class="title">
         <i class="fa-solid fa-fire fire"></i>
@@ -64,17 +65,10 @@
         </div>
 
         <div class="filters">
-          <select id="category-filter">
-            <option value="all">Tất cả danh mục</option>
-            <option value="1"></option>
-            <option value="2">Hoa Quả Mỹ</option>
-            <option value="3">Hoa Quả Trung</option>
-          </select>
-
           <select id="status-filter">
             <option value="all">Tất cả trạng thái</option>
             <option value="ACTIVE">Đang hoạt động</option>
-            <option value="UNACTIVE">Ngừng hoạt động</option>
+            <option value="INACTIVE">Ngừng hoạt động</option>
           </select>
 
           <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm theo tên">
@@ -88,6 +82,7 @@
               <th>Tên danh mục</th>
               <th>Trạng thái</th>
               <th>Ngày tạo</th>
+              <th>Chức năng</th>
             </tr>
           </thead>
           <tbody id="product-body">
@@ -104,18 +99,20 @@
             <form id="product-form">
               <div class="form-group">
                 <label class="required">Mã danh mục</label>
-                <input type="text" id="product-id" required />
+                <input type="text" id="category-code" />
+                <p id="error-code" style="color: red; display: none;"></p>
               </div>
 
               <div class="form-group">
                 <label class="required">Tên danh mục</label>
-                <input type="text" id="product-name" required />
+                <input type="text" id="category-name" />
+                <p id="error-name" style="color: red; display: none;">Tên danh mục không được để trống</p>
               </div>
               <div class="form-group">
                 <label>Trạng thái</label>
                 <div class="radio-group">
                   <label><input type="radio" name="status" value="ACTIVE" checked /> Đang hoạt động</label>
-                  <label><input type="radio" name="status" value="UNACTIVE" /> Ngừng hoạt động</label>
+                  <label><input type="radio" name="status" value="INACTIVE" /> Ngừng hoạt động</label>
                 </div>
               </div>
               <div class="form-actions">
